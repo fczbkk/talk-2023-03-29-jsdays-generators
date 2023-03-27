@@ -1,6 +1,5 @@
 import * as readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
-// const { Configuration, OpenAI } = require('openai');
 import {default as OpenAi } from 'openai'
 import { OPEN_AI_KEY } from '../../config.js';
 const {Configuration, OpenAIApi} = OpenAi
