@@ -1,6 +1,9 @@
 <html>
 <body>
-    <div class="aaa bbb ccc ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss ttt uuu vvv www xxx yyy zzz" id="myElement"></div>
+<div
+  class="aaa bbb ccc ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss ttt uuu vvv www xxx yyy zzz"
+  id="myElement"
+></div>
 
 <script>
 
@@ -33,9 +36,9 @@ function * elementSelectorGenerator (element) {
 
 function * selectorGenerator (element, maxResults = Number.positiveInfinity) {
   let foundResults = 0;
-  let previousElementCandidates = ['']
+  let previousElementCandidates = [''];
   for (const currentElement of elementParentGenerator(element)) {
-    const currentCandidates = []
+    const currentCandidates = [];
     for (const elementCandidate of elementSelectorGenerator(currentElement)) {
       for (const previousCandidate of previousElementCandidates) {
         const selectorCandidate = `${elementCandidate} ${previousCandidate}`;
@@ -44,17 +47,17 @@ function * selectorGenerator (element, maxResults = Number.positiveInfinity) {
           foundResults++;
           if (foundResults >= maxResults) return;
         } else {
-          currentCandidates.push(selectorCandidate)
+          currentCandidates.push(selectorCandidate);
         }
       }
     }
-    previousElementCandidates = currentCandidates
+    previousElementCandidates = currentCandidates;
   }
 }
 
-const myElement = document.getElementById('myElement')
+const myElement = document.getElementById('myElement');
 const myElementSelectorGenerator = selectorGenerator(myElement, 100);
-console.log([...myElementSelectorGenerator])
+console.log([...myElementSelectorGenerator]);
 
 </script>
 
