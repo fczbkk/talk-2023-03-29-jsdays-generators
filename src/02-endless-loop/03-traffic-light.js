@@ -1,12 +1,12 @@
-function * trafficLight () {
+function* trafficLight() {
   while (true) {
-    yield '🔴'
-    yield '🟠'
-    yield '🟢'
+    yield "🔴";
+    yield "🟠";
+    yield "🟢";
   }
 }
 
-const myTrafficLight = trafficLight()
+const myTrafficLight = trafficLight();
 setInterval(() => {
-  console.log(myTrafficLight.next().value)
-}, 1000)
+  console.log(myTrafficLight.next().value);
+}, 1000);

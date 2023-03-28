@@ -1,7 +1,7 @@
-function * rangeGenerator () {
+function* rangeGenerator() {
   for (let i = 0; i <= 10; i += 1) {
-    yield i
+    yield i;
   }
 }
 
-console.log([...rangeGenerator()])
+console.log([...rangeGenerator()]);

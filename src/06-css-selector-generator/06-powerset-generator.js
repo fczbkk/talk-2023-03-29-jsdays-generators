@@ -1,4 +1,4 @@
-function * powerSetGenerator (set) {
+function* powerSetGenerator(set) {
   const maxPosition = Math.pow(2, set.length) - 1;
   let position = 0;
   while (position++ < maxPosition) {
@@ -6,4 +6,4 @@ function * powerSetGenerator (set) {
   }
 }
 
-console.log([...powerSetGenerator([1, 2, 3])])
+console.log([...powerSetGenerator([1, 2, 3])]);

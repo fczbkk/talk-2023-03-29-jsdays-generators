@@ -1,4 +1,4 @@
-async function getUrlLinks (url) {
+async function getUrlLinks(url) {
   try {
     const response = await fetch(url);
     const html = await response.text();
@@ -9,7 +9,7 @@ async function getUrlLinks (url) {
   }
 }
 
-async function * crawl (startUrl, maxDepth = 3, maxVisits = 100) {
+async function* crawl(startUrl, maxDepth = 3, maxVisits = 100) {
   const visited = new Set();
   const queue = [{ url: startUrl, depth: 0 }];
 
@@ -20,7 +20,7 @@ async function * crawl (startUrl, maxDepth = 3, maxVisits = 100) {
       const links = await getUrlLinks(url);
       for (const link of links) {
         queue.push({ url: link, depth: depth + 1 });
-        console.log('added to queue:', link)
+        console.log("added to queue:", link);
       }
 
       visited.add(url);
@@ -29,7 +29,6 @@ async function * crawl (startUrl, maxDepth = 3, maxVisits = 100) {
   }
 }
 
-for await (const url of crawl('https://fczbkk.com')) {
-  console.log('crawled URL:', url);
+for await (const url of crawl("https://fczbkk.com")) {
+  console.log("crawled URL:", url);
 }
-
